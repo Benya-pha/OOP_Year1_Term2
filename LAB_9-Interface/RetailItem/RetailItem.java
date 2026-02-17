@@ -1,0 +1,5 @@
+package RetailItem;
+
+public interface RetailItem {
+    public double getRetailPrice();
+}
