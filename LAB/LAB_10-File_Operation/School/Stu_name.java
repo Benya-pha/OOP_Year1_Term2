@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Stu_name {
     public static void main(String[] args) throws IOException {
-        File f =new File("C:\\Users\\Mr_A_Dell\\IdeaProjects\\LAB10\\src\\School\\student2.txt");
+        File f =new File("/workspaces/OOP_Year1_Term2/LAB/LAB_10-File_Operation/School/student2.txt");
 
         Scanner kb =new Scanner(f);
 

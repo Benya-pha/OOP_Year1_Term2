@@ -5,7 +5,7 @@ import java.io.*;
 
 public class Student_Read {
     public static void main(String[] args) throws IOException{
-        File f =new File("C:\\Users\\Mr_A_Dell\\IdeaProjects\\LAB10\\src\\Student\\student.txt");
+        File f =new File("/workspaces/OOP_Year1_Term2/LAB/LAB_10-File_Operation/Student/student.txt");
 
         Scanner kb = new Scanner(f);
 

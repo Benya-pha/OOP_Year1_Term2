@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Score_check {
     public static void main(String[] args) throws IOException {
-        File scores = new File("C:\\Users\\Mr_A_Dell\\IdeaProjects\\LAB10\\src\\Score\\score.txt");
+        File scores = new File("/workspaces/OOP_Year1_Term2/LAB/LAB_10-File_Operation/Score/score.txt");
 
         Scanner kb = new Scanner(scores);
 
