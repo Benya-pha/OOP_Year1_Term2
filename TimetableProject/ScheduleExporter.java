@@ -1,15 +1,16 @@
 import java.io.File;
-import java.io.IOException;
-import java.io.PrintStream;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 
 public class ScheduleExporter {
-    static void export(Timetable timetable, String filename) {
+    public static void export(Timetable timetable, String filename) {
         try {
             File f = new File(filename);
-            PrintStream out = new PrintStream(f);
-            out.println( timetable.toString() );
+            // เปลี่ยนจาก PrintStream เป็น PrintWriter ตามสไลด์
+            PrintWriter out = new PrintWriter(f);
+            out.println(timetable.toString());
             out.close();
-        }catch (IOException e) {
+        } catch (FileNotFoundException e) {
             System.out.println("Error: " + e.getMessage());
         }
     }

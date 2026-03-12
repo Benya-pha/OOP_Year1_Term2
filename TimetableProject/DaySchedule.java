@@ -50,7 +50,7 @@ public class DaySchedule {
             } else if (e.getCourse() instanceof OnlineCourse) {
                 extra = "[" + ((OnlineCourse) e.getCourse()).getPlatform() + "]";
             }
-            result += "(" + e.getStartTime() + "-" + e.getEndTime() + ")  "
+            result += e.getStartTime() + "-" + e.getEndTime() + "  "
                     + e.getCourse().getCourseName() + "  " + extra + "  ";
         }
 
@@ -63,7 +63,7 @@ public class DaySchedule {
             } else if (e.getCourse() instanceof OnlineCourse) {
                 extra = "[" + ((OnlineCourse) e.getCourse()).getPlatform() + "]";
             }
-            result += "(" + e.getStartTime() + "-" + e.getEndTime() + ")  "
+            result += e.getStartTime() + "-" + e.getEndTime() + "  "
                     + e.getCourse().getCourseName() + "  " + extra + "  ";
         }
 
