@@ -18,7 +18,7 @@ public class SalesReport {
         Scanner kb = new Scanner(System.in);
         try {
             String filename = kb.nextLine();
-            File file = new File("/workspaces/OOP_Year1_Term2/LAB/LAB_11-Exception/Ex2/SalesData.txt");
+            File file = new File(filename);
             Scanner inputFile = new Scanner(file);
             while (inputFile.hasNext()) {
 
