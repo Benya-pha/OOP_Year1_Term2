@@ -7,18 +7,15 @@ public class MainFrame extends JFrame {
     private TimetablePanel timetablePanel;
 
     public MainFrame() {
-        setTitle("Class Schedule");
+        super("Class Schedule");
         setSize(900, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // ใช้ Layout พื้นฐาน
         setLayout(new BorderLayout());
 
         timetable = new Timetable();
         inputPanel = new InputPanel(timetable, this);
         timetablePanel = new TimetablePanel(timetable);
 
-        // วาง Panel ซ้ายและขวาตามลำดับ
         add(inputPanel, BorderLayout.WEST);
         add(timetablePanel, BorderLayout.CENTER);
 

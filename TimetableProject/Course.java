@@ -1,10 +1,11 @@
+//คลาสจัดการวิชาเรียน
 public class Course {
 
-    private String courseName;
-    private String instructorName;
-    private String startTime;
-    private String endTime;
-    private static int  totalCourses;
+    private String courseName; //วิชา
+    private String instructorName; //ผู้สอน
+    private String startTime; //เวลาเริ่ม
+    private String endTime; //เวลาจบ
+    private static int  totalCourses; //มีกี่วิชา
 
     public Course(String courseName, String instructorName, String startTime, String endTime) {
         this.courseName = courseName;
@@ -50,12 +51,7 @@ public class Course {
         return totalCourses;
     }
 
-    public String getInfo(){
-        return "[ " + courseName + " ]" +
-                "\n  Instructor : " + instructorName +
-                "\n  Time       : " + startTime + " - " + endTime;
-    }
-
+    //ปริ้นชื่อวิชา ผู้สอน เวลาเริ่ม - เวลาจบ คลาส
     @Override
     public String toString() {
         return "[ " + courseName + " ]" +

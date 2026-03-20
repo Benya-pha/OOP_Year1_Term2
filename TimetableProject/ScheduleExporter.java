@@ -6,7 +6,6 @@ public class ScheduleExporter {
     public static void export(Timetable timetable, String filename) {
         try {
             File f = new File(filename);
-            // เปลี่ยนจาก PrintStream เป็น PrintWriter ตามสไลด์
             PrintWriter out = new PrintWriter(f);
             out.println(timetable.toString());
             out.close();

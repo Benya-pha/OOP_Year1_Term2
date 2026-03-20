@@ -1,14 +1,16 @@
 import java.util.ArrayList;
 
+//คลาสจัดการตารางเรียนในแต่ละวัน
 public class DaySchedule {
-    private final String dayName;
-    private ArrayList<ScheduleEntry> morningList = new ArrayList<>();
-    private ArrayList<ScheduleEntry> afternoonList = new ArrayList<>();
+    private final String dayName; //ชื่อวัน
+    private ArrayList<ScheduleEntry> morningList = new ArrayList<>(); //รายการวิชาช่วงเช้า
+    private ArrayList<ScheduleEntry> afternoonList = new ArrayList<>(); //รายการวิชาช่วงบ่าย
 
     public DaySchedule(String dayName) {
         this.dayName = dayName;
     }
 
+    //เพิ่มวิชาเข้าสู่ตารางเรียน
     public void addEntry(ScheduleEntry entry) {
         if (entry.getPeriod().equalsIgnoreCase("Morning")) {
             morningList.add(entry);
@@ -37,6 +39,7 @@ public class DaySchedule {
         this.afternoonList = afternoonList;
     }
 
+    //แสดงตารางเรียนของวัน
     @Override
     public String toString() {
         String result = "[ " + dayName + " ]\n";
