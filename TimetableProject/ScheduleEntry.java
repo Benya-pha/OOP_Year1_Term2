@@ -1,9 +1,11 @@
+//คลาสสำหรับรายการตารางเรียน
 public class ScheduleEntry implements Schedulable {
-    private String startTime;
-    private String endTime;
-    private Course course;
-    private String dayOfWeek;
+    private String startTime; //เวลาเริ่ม
+    private String endTime; //เวลาจบ
+    private Course course; //วิชา
+    private String dayOfWeek; //วัน
 
+    //สร้าง ScheduleEntry
     public ScheduleEntry(String startTime, String endTime, Course course, String dayOfWeek) {
         this.startTime = startTime;
         this.endTime = endTime;
@@ -44,6 +46,8 @@ public class ScheduleEntry implements Schedulable {
     public String getEndTime() {
         return endTime;
     }
+
+    //คืนค่าช่วงเวลา เช้า/บ่าย
     @Override
     public String getPeriod() {
         String[] parts = startTime.split(":");
@@ -56,6 +60,7 @@ public class ScheduleEntry implements Schedulable {
         }
     }
 
+    //ปริ้นข้อมูลรายการตารางเรียน
     @Override
     public String toString() {
         return dayOfWeek + " | " + startTime + "-" + endTime

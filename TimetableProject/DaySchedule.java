@@ -6,11 +6,12 @@ public class DaySchedule {
     private ArrayList<ScheduleEntry> morningList = new ArrayList<>(); //รายการวิชาช่วงเช้า
     private ArrayList<ScheduleEntry> afternoonList = new ArrayList<>(); //รายการวิชาช่วงบ่าย
 
+    //สร้าง DaySchedule
     public DaySchedule(String dayName) {
         this.dayName = dayName;
     }
 
-    //เพิ่มวิชาเข้าสู่ตารางเรียน
+    //เพิ่มวิชาเข้าตาราง
     public void addEntry(ScheduleEntry entry) {
         if (entry.getPeriod().equalsIgnoreCase("Morning")) {
             morningList.add(entry);
@@ -39,7 +40,7 @@ public class DaySchedule {
         this.afternoonList = afternoonList;
     }
 
-    //แสดงตารางเรียนของวัน
+    //ปริ้นตารางเรียนของวัน
     @Override
     public String toString() {
         String result = "[ " + dayName + " ]\n";

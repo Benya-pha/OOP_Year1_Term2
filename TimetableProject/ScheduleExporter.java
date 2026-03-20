@@ -2,13 +2,15 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
+//คลาสส่งออกข้อมูลตารางเรียนลงไฟล์
 public class ScheduleExporter {
+    //ส่งออกข้อมูล Timetable ลงไฟล์
     public static void export(Timetable timetable, String filename) {
         try {
-            File f = new File(filename);
-            PrintWriter out = new PrintWriter(f);
-            out.println(timetable.toString());
-            out.close();
+            File f = new File(filename); //สร้างไฟล์
+            PrintWriter out = new PrintWriter(f); //เขียนไฟล์
+            out.println(timetable.toString()); //เขียนข้อมูล
+            out.close(); //ปิดไฟล์
         } catch (FileNotFoundException e) {
             System.out.println("Error: " + e.getMessage());
         }

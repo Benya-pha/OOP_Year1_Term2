@@ -1,6 +1,8 @@
+//คลาสวิชาเรียนในห้องเรียน
 public class OnsiteCourse extends Course{
-    private String room;
+    private String room; //ห้องเรียน
 
+    //สร้าง OnsiteCourse
     public OnsiteCourse(String courseName, String instructorName, String startTime, String endTime, String room) {
         super(courseName, instructorName, startTime, endTime);
         this.room = room;
@@ -14,6 +16,7 @@ public class OnsiteCourse extends Course{
         this.room = room;
     }
 
+    //ปริ้นข้อมูลวิชาเรียนในห้องเรียน
     @Override
     public String toString() {
         return super.toString() +
