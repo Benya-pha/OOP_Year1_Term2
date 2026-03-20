@@ -1,9 +1,6 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 
 //คลาสแผงแสดงผลตารางเรียน (GUI)
@@ -50,11 +47,15 @@ class TimetablePanel extends JPanel {
 
     //เพิ่มแถวข้อมูลลงในตาราง
     private void addRowToTable(String dayName, ScheduleEntry e) {
-        String time = e.getStartTime() + " - " + e.getEndTime(); //เวลา
+        //ใช้ Interface Schedulable ดึงข้อมูลเวลา
+        Schedulable s = e; 
+        String time = s.getStartTime() + " - " + s.getEndTime(); //ดึงเวลาผ่าน Interface
+        
         String course = e.getCourse().getCourseName(); //ชื่อวิชา
         String room = "-"; //ห้องเรียน
         String type = "Onsite"; //ประเภท
 
+        //เช็คประเภทวิชา
         if (e.getCourse() instanceof OnsiteCourse) {
             room = ((OnsiteCourse) e.getCourse()).getRoom();
         } else if (e.getCourse() instanceof OnlineCourse) {

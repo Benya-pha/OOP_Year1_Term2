@@ -66,7 +66,7 @@ public class InputPanel extends JPanel {
         add(lblEnd);
 
         tfEnd = new JTextField();
-        tfEnd.setBounds(180, 140, 60, 25);
+        tfEnd.setBounds(180, 140, 90, 25);
         add(tfEnd);
 
         JLabel lblRoom = new JLabel("Room / Platform:");
