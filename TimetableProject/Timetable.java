@@ -14,6 +14,14 @@ public class Timetable {
         dayList.add(day);
     }
 
+    //ลบวิชาออกจากตาราง
+    public void removeCourse(String dayName, ScheduleEntry entry) {
+        DaySchedule day = getDay(dayName);
+        if (day != null) {
+            day.removeEntry(entry);
+        }
+    }
+
     //ดึงข้อมูลตารางตามชื่อวัน
     public DaySchedule getDay(String dayName){
         for (int i = 0; i < dayList.size() ; i++) {

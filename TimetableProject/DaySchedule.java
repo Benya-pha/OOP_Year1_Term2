@@ -20,6 +20,15 @@ public class DaySchedule {
         }
     }
 
+    //ลบวิชาออกจากตาราง
+    public void removeEntry(ScheduleEntry entry) {
+        if (entry.getPeriod().equalsIgnoreCase("Morning")) {
+            morningList.remove(entry);
+        } else if (entry.getPeriod().equalsIgnoreCase("Afternoon")) {
+            afternoonList.remove(entry);
+        }
+    }
+
     public String getDayName() {
         return dayName;
     }
@@ -43,7 +52,7 @@ public class DaySchedule {
     //ปริ้นตารางเรียนของวัน
     @Override
     public String toString() {
-        String result = "\n"+"[" + dayName + "]\n";
+        String result = "[ " + dayName + " ]\n";
 
         result += "  Morning   : ";
         for (int i = 0; i < morningList.size(); i++) {
