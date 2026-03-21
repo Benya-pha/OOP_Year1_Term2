@@ -54,7 +54,7 @@ public class Course {
     //ปริ้นชื่อวิชา ผู้สอน เวลาเริ่ม - เวลาจบ คลาส
     @Override
     public String toString() {
-        return "[ " + courseName + " ]" +
+        return "[" + courseName + "]" +
                 "\n  Instructor : " + instructorName +
                 "\n  Time       : " + startTime + " - " + endTime;
     }

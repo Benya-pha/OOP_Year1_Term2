@@ -15,7 +15,7 @@ class TimetablePanel extends JPanel {
         setLayout(new BorderLayout());
 
         //สร้างตาราง
-        String[] columns = {"Day", "Time", "Course", "Room / Platform", "Type"}; //หัวข้อคอลัมน์
+        String[] columns = {"Day", "Time", "Course", "Room / Platform","instructor", "Type"}; //หัวข้อคอลัมน์
         tableModel = new DefaultTableModel(columns, 0);
         table = new JTable(tableModel);
 
@@ -48,10 +48,11 @@ class TimetablePanel extends JPanel {
     //เพิ่มแถวข้อมูลลงในตาราง
     private void addRowToTable(String dayName, ScheduleEntry e) {
         //ใช้ Interface Schedulable ดึงข้อมูลเวลา
-        Schedulable s = e; 
+        Schedulable s = e;
         String time = s.getStartTime() + " - " + s.getEndTime(); //ดึงเวลาผ่าน Interface
-        
-        String course = e.getCourse().getCourseName(); //ชื่อวิชา
+
+        String course = e.getCourse().getCourseName(); // ชื่อวิชา
+        String instructor = e.getCourse().getInstructorName(); // ชื่ออาจารย์ (ดึงมาเก็บไว้ตรงนี้)
         String room = "-"; //ห้องเรียน
         String type = "Onsite"; //ประเภท
 
@@ -63,6 +64,6 @@ class TimetablePanel extends JPanel {
             type = "Online";
         }
 
-        tableModel.addRow(new Object[]{dayName, time, course, room, type}); //เพิ่มแถว
+        tableModel.addRow(new Object[]{dayName, time, course, room, instructor, type}); //เพิ่มแถว
     }
 }

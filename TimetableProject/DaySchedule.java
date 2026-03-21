@@ -43,7 +43,7 @@ public class DaySchedule {
     //ปริ้นตารางเรียนของวัน
     @Override
     public String toString() {
-        String result = "[ " + dayName + " ]\n";
+        String result = "\n"+"[" + dayName + "]\n";
 
         result += "  Morning   : ";
         for (int i = 0; i < morningList.size(); i++) {
@@ -55,7 +55,7 @@ public class DaySchedule {
                 extra = "[" + ((OnlineCourse) e.getCourse()).getPlatform() + "]";
             }
             result += e.getStartTime() + "-" + e.getEndTime() + "  "
-                    + e.getCourse().getCourseName() + "  " + extra + "  ";
+                    + e.getCourse().getCourseName() + " (" + e.getCourse().getInstructorName() + ") " + extra + "  ";
         }
 
         result += "\n  Afternoon : ";
@@ -68,7 +68,7 @@ public class DaySchedule {
                 extra = "[" + ((OnlineCourse) e.getCourse()).getPlatform() + "]";
             }
             result += e.getStartTime() + "-" + e.getEndTime() + "  "
-                    + e.getCourse().getCourseName() + "  " + extra + "  ";
+                    + e.getCourse().getCourseName() + " (" + e.getCourse().getInstructorName() + ") " + extra + "  ";
         }
 
         return result;
